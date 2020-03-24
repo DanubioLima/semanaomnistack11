@@ -1,0 +1,12 @@
+Entidades:
+    -Casos
+    -ONG
+Funcionalidades:
+    -Cadastrar ONG
+    -Login de ONG
+    -Cadastrar Casos
+    -Deletar Casos
+    -Listar Casos especificos de uma ONG
+    -Listar todos os Casos
+    -Entrar em contato com a ONG
+    -Logout
