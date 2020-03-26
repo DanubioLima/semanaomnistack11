@@ -6,10 +6,11 @@ module.exports = {
         const [count] = await connection('incidents').count();
 
         const incidents = await connection('incidents')
-            .join('ongs', 'ong_id', '=', 'incidents.ong_id')
             .limit(5)
-            .offset((page - 1) * 5)
-            .select(['incidents.*', 'ongs.name', 'ongs.email', 'ongs.whatsapp', 'ongs.city', 'ongs.uf']);
+            .offset((page -1) *5)
+            .select('*')
+
+        //const incidents = await connection('incidents').select('*');
 
         response.header('X-Total-Count', count['count(*)'])
 
@@ -20,7 +21,7 @@ module.exports = {
         const {title, description, value} = request.body;
         const ong_id  = request.headers.authorization;
 
-        const [id] = await connection('incidents').insert({
+        const [id] = await connection('incidents').where('ong_id', ong_id).insert({
             title,
             description,
             value,
