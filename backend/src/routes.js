@@ -10,6 +10,9 @@ routes.post('/session', SessionController.create)
 routes.get('/ongs', OngController.index);
 routes.post('/ongs', OngController.create);
 routes.get('/profile',ProfileOngController.index);
+routes.get('/', ()=>{
+console.log('Hello API')
+} )
 
 
 routes.post('/incidents', IncidentController.create);
