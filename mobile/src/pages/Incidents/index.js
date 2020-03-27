@@ -16,7 +16,7 @@ export default function Incident() {
 
     const navigation = useNavigation();
     function navigateToDetails(incident) {
-        navigation.navigate('Detail', {incident});
+        return navigation.navigate('Detail', { incident });
     }
 
     async function loadIncidents() {
@@ -40,7 +40,7 @@ export default function Incident() {
 
     useEffect(() => {
         loadIncidents();
-    }, [])
+    }, [incidents])
 
 
 
@@ -61,20 +61,20 @@ export default function Incident() {
                 onEndReached={loadIncidents}
                 onEndReachedThreshold={0.2}
                 keyExtractor={incident => String(incident.id)}
-                showsHorizontalScrollIndicator={false} 
-                renderItem={({ item }) => (
+                showsHorizontalScrollIndicator={false}
+                renderItem={({ item: incident }) => (
                     <View style={style.incident}>
                         <Text style={style.incidentProperty}>ONG:</Text>
-                        <Text style={style.incidentValue}>{item.name}</Text>
+                        <Text style={style.incidentValue}>{incident.name}</Text>
 
                         <Text style={style.incidentProperty}>CASO:</Text>
-                        <Text style={style.incidentValue}>{item.title}</Text>
+                        <Text style={style.incidentValue}>{incident.title}</Text>
 
                         <Text style={style.incidentProperty}>VALOR:</Text>
                         <Text style={style.incidentValue}>{
-                            Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(item.value)}</Text>
+                            Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</Text>
 
-                        <TouchableOpacity style={style.detailsButton} onPress={navigateToDetails}>
+                        <TouchableOpacity style={style.detailsButton} onPress={ navigateToDetails}>
                             <Text style={style.detailsButtonText}>Ver mais detalhes</Text>
                             <Feather name="arrow-right" size={16} color="#e02041" />
                         </TouchableOpacity>
