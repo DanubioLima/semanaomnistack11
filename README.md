@@ -4,11 +4,15 @@ em contato com outras ONG'S.
 
 ## Instalação
 
-Para instalar o projeto, faça o clone do repositório em sua máquina usando `git clone`, entre na pasta `backend` e execute:
+Para instalar o projeto, faça o clone do repositório em sua máquina usando `git clonehttps://github.com/DanubioLima/semanaomnistack11.git`, entre na pasta `backend` e execute:
 
 `yarn install`
 
 Depois entre na pasta `frontend` e execute:
+
+`yarn install`
+
+Então entre na pasta `mobile` e execute:
 
 `yarn install`
 
@@ -22,6 +26,10 @@ Logo em seguida, vá para a pasta `web` e execute:
 
 `yarn start`
 
+Para iniciar o app, entre na pasta `mobile` e execute:
+
+`yarn start`
+
 Pronto, sua aplicação está rodando!
 
 ## Tecnologias Utilizadas
@@ -31,3 +39,4 @@ Pronto, sua aplicação está rodando!
 * Express - middleware de roteamento usado no backend da aplicação
 * React - biblioteca JS usada para construir interfaces de usuário.
 * Axios - cliente HTTP feito em Javascript.
+* Expo - framework JS que facilita a criação de apps com React Native.
